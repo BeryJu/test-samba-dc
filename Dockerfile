@@ -8,4 +8,7 @@ RUN apt-get update && \
 RUN rm /etc/krb5.conf /etc/samba/smb.conf
 COPY ./scripts /opt/scripts
 
+HEALTHCHECK  --retries=3 --start-period=5s --interval=15s --timeout=15s \
+            CMD smbclient -L \\localhost -U % -m SMB3
+
 CMD /opt/scripts/start.sh
