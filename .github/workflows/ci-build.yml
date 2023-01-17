@@ -26,5 +26,5 @@ jobs:
       uses: docker/build-push-action@v3.2.0
       with:
         tags: ghcr.io/beryju/test-samba-dc:latest
-        push: ${{ github.ref == 'refs/heads/master' }}
+        push: ${{ github.ref == 'refs/heads/main' }}
         platforms: linux/amd64,linux/arm/v7,linux/arm64
