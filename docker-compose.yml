@@ -1,0 +1,15 @@
+version: '3.5'
+
+services:
+  samba:
+    image: ghcr.io/beryju/test-samba-dc
+    cap_add:
+      - SYS_ADMIN
+    ports:
+      - 389:389
+      - 636:636
+    hostname: dc1
+    environment:
+      SMB_DOMAIN: test-ad.beryju.io
+      SMB_NETBIOS: beryjuio
+      SMB_ADMIN_PASSWORD: A-test-password-with-123-numbers!
