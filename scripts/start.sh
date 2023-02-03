@@ -37,7 +37,7 @@ start() {
         exit 127
     }
 
-    samba -i \
+    samba -F \
         --option="log level=3" \
         --option="ldap server require strong auth=no"
 }
