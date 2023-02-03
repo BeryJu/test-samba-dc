@@ -38,7 +38,9 @@ start() {
     }
 
     samba -F \
-        --option="log level=3" \
+        --option="log level=3 dsdb_json_audit:5 dsdb_password_json_audit:5 dsdb_group_json_audit:5 dsdb_transaction_json_audit:5" \
+        --option="debug timestamp=no" \
+        --option="log file=/dev/stdout" \
         --option="ldap server require strong auth=no"
 }
 
