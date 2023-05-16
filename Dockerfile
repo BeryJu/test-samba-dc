@@ -1,4 +1,4 @@
-FROM docker.io/library/ubuntu:23.04
+FROM docker.io/library/ubuntu:23.10
 
 ENV DEBIAN_FRONTEND=noninteractive
 
