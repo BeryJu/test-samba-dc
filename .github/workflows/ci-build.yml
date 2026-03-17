@@ -38,3 +38,4 @@ jobs:
           docker build . -t ghcr.io/beryju/test-samba-dc:latest
       - run: |
           docker compose up -d --wait
+          docker compose logs
