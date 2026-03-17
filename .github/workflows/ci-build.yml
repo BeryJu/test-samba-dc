@@ -31,10 +31,11 @@ jobs:
           push: ${{ github.ref == 'refs/heads/main' }}
           platforms: linux/amd64,linux/arm/v7,linux/arm64
   test:
-    needs:
-      - build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
       - run: |
+          docker build . -t ghcr.io/beryju/test-samba-dc:latest
+      - run: |
           docker compose up -d --wait
+          docker compose logs
