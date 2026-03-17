@@ -21,6 +21,9 @@ jobs:
         uses: docker/metadata-action@v6
         with:
           images: ghcr.io/beryju/test-samba-dc
+          tags: |
+            type=raw,value=latest
+            type=sha
       - uses: docker/build-push-action@v7.0.0
         with:
           tags: ${{ steps.meta.outputs.tags }}
