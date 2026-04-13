@@ -24,7 +24,7 @@ jobs:
           tags: |
             type=raw,value=latest
             type=sha
-      - uses: docker/build-push-action@v7.0.0
+      - uses: docker/build-push-action@v7.1.0
         with:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
