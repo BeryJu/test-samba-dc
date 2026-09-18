@@ -26,7 +26,7 @@ jobs:
             type=raw,value=latest,enable={{is_default_branch}}
             type=sha
             type=ref,event=tag
-      - uses: docker/build-push-action@v7.3.0
+      - uses: docker/build-push-action@v7.4.0
         with:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
